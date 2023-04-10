@@ -1,0 +1,140 @@
+package assignment1;
+import java.util.*;
+public class Circlearea {
+	public float areademo(float rad) {
+		return (float)3.14*rad*rad;
+	}
+}
+
+public class Circlecircumference {
+	public float circumc(float radi) {
+		return  (float)(2*3.14*radi);
+	}
+}
+
+public class FirstDayDemo {
+	Scanner sc;
+        float f;
+	int i;
+	long l;
+	double d;
+	short s;
+	public void helloDemo() {
+		System.out.println("Hello World....!");
+	}
+	public void addDemo() {
+		sc = new Scanner(System.in);
+		System.out.print("Enter num1:- ");
+		int num1 = sc.nextInt();
+		System.out.print("Enter num2:- ");
+		int num2 = sc.nextInt();
+		int sum = num1 +num2;
+		System.out.println("The result for addition of two numbers is:- "+sum);
+	}
+	public double ciCalculate(double amount,double principal) {
+		double ci = amount - principal;
+		return ci;
+	}
+	public int powerDemo(int base,int indices) {
+		int result =1;
+		for(int i=1;i<=indices;i++) {
+			result = result*base;
+		}
+		return result;
+	}
+	public void swapdemo(int n1,int n2) {
+		int temp = 0;
+		temp=n1;
+		n1=n2;
+		n2=temp;
+		System.out.println("The value after swapping n1:- "+n1+",n2:- "+n2);
+	}
+    public float areaDemoRect(int side1,int side2) {
+    	return side1*side2;
+    }
+    public void asciiDemo(char ch) {
+    	int asci = ch;
+    	System.out.println("Ascii value is:- "+asci);
+    }
+	public void sizeDisplay() {
+		System.out.println("Floatsize:-"+ Float.SIZE/8);
+		System.out.println("Integersize:-"+ Integer.SIZE/8);
+		System.out.println("Longsize:-"+ Long.SIZE/8);
+		System.out.println("Doublesize:-"+ Double.SIZE/8);
+		System.out.println("Shortsize:-"+ Short.SIZE/8);
+	}
+        public void defaultValue() {
+		
+		System.out.println("Float_value:-"+f );
+		System.out.println("Integer_value:-"+ i);
+		System.out.println("Long_value:-"+ l);
+		System.out.println("Double_value:-"+ d);
+		System.out.println("Short_value:-"+ s);
+	}
+	public void swapWithoutVar(int a,int b) {
+		b=b-a;
+		a=a+b;
+		b=a-b;
+		System.out.println("a:- "+a+ "b:- "+b);
+	}
+	public void printFibo(int limit) {
+		int a = 0;
+		int b = 1;
+		System.out.print(a+" "+b);
+		for(int i=2;i<=limit;++i) {
+			int c=a+b;
+			System.out.print(" "+c+" ");
+				a=b;
+				b=c;
+		}
+	}
+	public static void main(String[] args) {
+		FirstDayDemo f = new FirstDayDemo();
+		
+		//Q1.Print Hello world
+		f.helloDemo();
+		
+		//Q2.Add two numbers
+		f.addDemo();
+		
+		//Q3.Calculate Compound Interest
+		f.ciCalculate(45000, 9000);
+		
+		
+		//Q4.Calculate power of number
+		f.powerDemo(5, 3);
+		
+		//Q5.Swap two numbers
+		f.swapdemo(45, 66);
+		
+		//Q6.Calculate area of rectangle
+		f.areaDemoRect(14, 5);
+		
+		/*Q7.Calculate area and circumference of the circle using 
+		multiple classes*/
+		Circlearea c1 = new Circlearea();
+		float result = c1.areademo(6.5f);
+		System.out.println("The area of circle is:- "+result);
+		
+		Circlecircumference cc = new Circlecircumference();
+		float ans = cc.circumc(15);
+		System.out.println("The circumference of circle is:- "+ans);
+	    
+		//Q8.Java program to find ASCII values of a character
+		f.asciiDemo('p');
+		
+		//Q9.Print default values of primitive data type variable
+		f.sizeDisplay();
+		f.defaultValue();
+		//Q10.Swap two variables without using other variable.
+		f.swapWithoutVar(45, 15);
+		
+		//Q11.Print fibonacci series till n.
+		f.printFibo(10);
+		
+	}
+
+}
+
+
+
